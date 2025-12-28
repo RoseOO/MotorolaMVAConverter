@@ -23,7 +23,7 @@ The converter uses FFmpeg under the hood and includes loudness normalization to 
 
 ## Requirements
 
-- **Python 3.10+** (requires Python 3.10+ for union operator syntax in type hints)
+- **Python 3.10+** (the current implementation uses Python 3.10+ union operator syntax `str | None`)
 - **FFmpeg**: Must be installed and available in your system PATH
 - **tkinter**: Usually included with Python installations
 
@@ -70,7 +70,7 @@ The converter uses FFmpeg under the hood and includes loudness normalization to 
    ```
 
 2. **Convert your audio**:
-   - Click **Browse** next to "Input WAV" to select your audio file
+   - Click **Browse** next to "Input audio file" to select your audio file
    - Choose an output folder (defaults to current directory)
    - Enter a filename (without extension)
    - Select the appropriate profile:
