@@ -7,7 +7,7 @@ A simple GUI application to convert audio files into formats compatible with Mot
 This tool converts standard audio files (WAV, MP3, FLAC, etc.) into the specific formats required by Motorola radio programming software:
 
 - **APX CPS-ready WAV**: 8 kHz, 16-bit PCM, mono WAV files for use with APX CPS VA Converter Utility
-- **MOTOTRBO MVA**: 8 kHz, 8-bit μ-law encoded MVA files for legacy MOTOTRBO CPS
+- **MOTOTRBO MVA**: 8 kHz, μ-law encoded MVA files for legacy MOTOTRBO CPS
 
 The converter uses FFmpeg under the hood and includes loudness normalization to ensure voice prompts are at appropriate levels.
 
@@ -17,13 +17,13 @@ The converter uses FFmpeg under the hood and includes loudness normalization to 
 - **Multiple input formats**: Supports any audio format that FFmpeg can read (WAV, MP3, M4A, FLAC, AIFF, OGG, AAC, WMA, etc.)
 - **Two conversion profiles**:
   - APX CPS-ready WAV (8 kHz, 16-bit PCM, mono)
-  - MOTOTRBO MVA (8 kHz, 8-bit μ-law, legacy CPS safe)
+  - MOTOTRBO MVA (8 kHz, μ-law encoded, legacy CPS safe)
 - **Automatic loudness normalization**: Applies audio normalization for consistent voice prompt levels
 - **Custom output naming**: Choose your own output filename and location
 
 ## Requirements
 
-- **Python 3.10+** (uses modern type hints like `str | None`)
+- **Python 3.10+** (requires Python 3.10+ for union operator syntax in type hints)
 - **FFmpeg**: Must be installed and available in your system PATH
 - **tkinter**: Usually included with Python installations
 
@@ -99,7 +99,7 @@ This profile creates an MVA file (which is actually a WAV file with a .mva exten
 **Technical specs:**
 - Sample rate: 8 kHz
 - Channels: Mono
-- Codec: μ-law (PCM mu-law)
+- Codec: μ-law encoding
 - Metadata: Stripped for maximum compatibility
 - Bitexact flags: Enabled for deterministic output
 
